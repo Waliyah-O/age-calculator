@@ -1,0 +1,47 @@
+let validateInput = () => {
+  const regex = new RegExp(/[^0-9]/, "g");
+  if (inputDay.value === "") {
+    paraDay.innerHTML = "Enter a valid day";
+    inputDay.className = "inputError";
+    paraDay.className = "paraError";
+    labelDay.className = "paraError";
+  } else if (!inputDay.value.match(regex) && (inputDay.value >= 1) || (inputDay.value <= 31)) {
+    spanDay.innerHTML = inputDay.value;
+  } else if ((inputDay.value < 1) || (inputDay.value > 31)) {
+    paraDay.innerHTML = "Must be a valid day";
+    inputDay.className = "inputError";
+    paraDay.className = "paraError";
+    labelDay.className = "paraError";
+  } else {
+    paraDay.innerHTML = "";
+    inputDay.className = "";
+    paraDay.className = "";
+    labelDay.className = "";
+  }
+  if (inputMonth.value === "") {
+    paraMonth.innerHTML = "Enter a valid month";
+    inputMonth.className = "inputError";
+    paraMonth.className = "paraError";
+    labelMonth.className = "paraError";
+  } else if (!inputMonth.value.match(regex)) {
+    spanMonth.innerHTML = inputMonth.value;
+  } else {
+    paraMonth.innerHTML = "";
+    inputMonth.className = "";
+    paraMonth.className = "";
+    labelMonth.className = "";
+  }
+  if (inputYear.value === "") {
+    paraYear.innerHTML = "Enter a valid year";
+    inputYear.className = "inputError";
+    paraYear.className = "paraError";
+    labelYear.className = "paraError";
+  } else if (!inputYear.value.match(regex)) {
+    spanYear.innerHTML = inputYear.value;
+  } else {
+    paraYear.innerHTML = "";
+    inputYear.className = "";
+    paraYear.className = "";
+    labelYear.className = "";
+  }
+};
